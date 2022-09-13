@@ -1,27 +1,42 @@
 import React,{ useState } from 'react';
 import './App.css';
 import Cards from '../card/Cards';
+import Filter from '../filter/Filter';
 
 
 function App() {
   const [showToggel, setShowToggel] = useState(false)
+  const [ filter, setFilter ] = useState("")
   const [state, setState] = useState([
-    { name: "Mourad", age: "33 ans", adress: "Bettana", phone: "0653866554"},
-    { name: "Mouhcine", age: "40 ans", adress: "Hay salam", phone: "0653866555"},
-    { name: "Rayan", age: "10 ans", adress: "Medina", phone: "0653866556"}
+    { id: 1, name: "Mourad", age: "33 ans", adress: "Bettana/Salé", phone: "0653866554", type: "Men"},
+    { id: 2, name: "Naima", age: "64 ans", adress: "Sania Dermel/Tetouan", phone: "0653866555", type: "Girl"},
+    { id: 3, name: "Rayan", age: "10 ans", adress: "Hay Riad/Rabat", phone: "0653866556", type: "Men"},
+    { id: 4, name: "Lina", age: "12 ans", adress: "Agdal/Rabat", phone: "0653866557", type: "Girl"}
   ])
 
   const handleToggel = () => {
     setShowToggel(!showToggel)
   }
 
-  const handleDeleteStudent = (e, idx) => {
+  const handleDeleteStudent = (e, selectId) => {
       setState((prevState) => {
-        return prevState.filter((e,index) => index !== idx)  
+        return prevState.filter(el => el.id !== selectId)  
       }
       )
       
       console.log(state)
+  }
+
+  const filtreHandle = (name) => {
+    setFilter(name)
+  }
+
+
+  const handleName = () => {
+    if(filter.length !==0){
+      return state.filter((el)=>el.name.includes(filter))
+    }
+    return state
   }
 
   return (
@@ -32,7 +47,8 @@ function App() {
       >{showToggel ? "Show List Students" : "Hide List Students"}
       </button>
       <div className={!showToggel ? "show" : "hide"}>
-          <Cards students={state} handleDeleteStudent={handleDeleteStudent}/>
+          <Filter filtreHandle={filtreHandle} />
+          <Cards students={handleName()} handleDeleteStudent={handleDeleteStudent}/>
       </div>
     </div>
   );
