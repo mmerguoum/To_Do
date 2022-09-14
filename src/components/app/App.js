@@ -1,6 +1,6 @@
 import React,{ useState } from 'react';
 import './App.css';
-import Cards from '../card/Cards';
+import CardList from '../cardList/CardList';
 import Filter from '../filter/Filter';
 
 
@@ -48,7 +48,7 @@ function App() {
       </button>
       <div className={!showToggel ? "show" : "hide"}>
           <Filter filtreHandle={filtreHandle} />
-          <Cards students={handleName()} handleDeleteStudent={handleDeleteStudent}/>
+          <CardList students={handleName()} handleDeleteStudent={handleDeleteStudent}/>
       </div>
     </div>
   );
