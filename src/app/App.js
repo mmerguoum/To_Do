@@ -1,7 +1,8 @@
 import React,{ useState } from 'react';
 import './App.css';
-import CardList from '../cardList/CardList';
-import Filter from '../filter/Filter';
+import CardList from '../components/cardList/CardList'
+import Filter from '../components/filter/Filter';
+import Modal from '../components/modal/Modal';
 
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
 
   return (
     <div className="App">
+      <Modal/>
       <h1 className='grandTitle'>List Students</h1>
       <button style={{marginBottom: "20px"}}
       onClick={handleToggel}

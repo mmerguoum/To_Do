@@ -1,0 +1,22 @@
+.backdrop{
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: black;
+    opacity: 0.7;
+}
+
+.overlay{
+    z-index: 150;
+    position: absolute;
+    background-color: white;
+    width: 30%;
+    height: 400px;
+    transform: translate(-50%, -20%);
+    top: 30%;
+    left: 50%;
+    border-radius: 8px;
+}
