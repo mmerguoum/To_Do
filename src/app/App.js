@@ -8,6 +8,7 @@ import Modal from '../components/modal/Modal';
 function App() {
   const [showToggel, setShowToggel] = useState(false)
   const [ filter, setFilter ] = useState("")
+  const [ showModal, setShowModal ] = useState(false)
   const [state, setState] = useState([
     { id: 1, name: "Mourad", age: "33 ans", adress: "Bettana/Salé", phone: "0653866554", type: "Men"},
     { id: 2, name: "Naima", age: "64 ans", adress: "Sania Dermel/Tetouan", phone: "0653866555", type: "Girl"},
@@ -42,12 +43,24 @@ function App() {
 
   return (
     <div className="App">
-      <Modal/>
+      <Modal show={showModal} closeModal={()=>setShowModal(false)}/>
       <h1 className='grandTitle'>List Students</h1>
-      <button style={{marginBottom: "20px"}}
-      onClick={handleToggel}
-      >{showToggel ? "Show List Students" : "Hide List Students"}
-      </button>
+      <div>
+        <button 
+            className='button'
+            style={{marginBottom: "20px"}}
+            onClick={handleToggel}
+            >{showToggel ? "Show List Students" : "Hide List Students"}
+        </button>
+        <button 
+            className='button'
+            style={{marginLeft: "20px"}}
+            onClick={()=>{setShowModal(true)}}
+            >
+              New Student
+        </button>
+      </div>
+      
       <div className={!showToggel ? "show" : "hide"}>
           <Filter filtreHandle={filtreHandle} />
           <CardList students={handleName()} handleDeleteStudent={handleDeleteStudent}/>

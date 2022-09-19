@@ -3,20 +3,21 @@ import ReactDOM from 'react-dom';
 import styles from './modal.module.css'
 
 
-const Backdrop = () => <div className={styles.backdrop}></div>
+const Backdrop = ({close}) => <div className={styles.backdrop} onClick={close}></div>
 const Overlay = () => <div className={styles.overlay}></div>
 
-const Modal = () => {
+const Modal = ({show, closeModal}) => {
   return (
-    <Fragment>
+    show && (<Fragment>
         {ReactDOM.createPortal(
             <Fragment>
-                <Backdrop/>
+                <Backdrop close={closeModal}/>
                 <Overlay/>
             </Fragment>,
             document.getElementById('modal')
         )}
     </Fragment>
+    )
   )
 }
 
