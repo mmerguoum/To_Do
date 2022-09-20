@@ -43,7 +43,7 @@ function App() {
 
   return (
     <div className="App">
-      <Modal show={showModal} closeModal={()=>setShowModal(false)}/>
+      <Modal show ={showModal} closeModal={()=>setShowModal(false)}/>
       <h1 className='grandTitle'>List Students</h1>
       <div>
         <button 
@@ -55,7 +55,7 @@ function App() {
         <button 
             className='button'
             style={{marginLeft: "20px"}}
-            onClick={()=>{setShowModal(true)}}
+            onClick={()=>setShowModal(true)}
             >
               New Student
         </button>
