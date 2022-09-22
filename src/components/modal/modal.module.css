@@ -13,10 +13,35 @@
     z-index: 150;
     position: absolute;
     background-color: white;
-    width: 30%;
-    height: 400px;
     transform: translate(-50%, -20%);
     top: 30%;
     left: 50%;
-    border-radius: 8px;
+    border-radius: 15px;
+    padding: 20px;
 }
+
+.titleForm{
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.containerDiv{
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+.inputForm{
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 8px;
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+

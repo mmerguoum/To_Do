@@ -3,6 +3,8 @@ import './App.css';
 import CardList from '../components/cardList/CardList'
 import Filter from '../components/filter/Filter';
 import Modal from '../components/modal/Modal';
+import Button from '../components/layouts/Button';
+import styles from '../components/layouts/layout.module.css'
 
 
 function App() {
@@ -46,19 +48,19 @@ function App() {
       <Modal show ={showModal} closeModal={()=>setShowModal(false)}/>
       <h1 className='grandTitle'>List Students</h1>
       <div>
-        <button 
-            className='button'
+        <Button 
+            className={styles.button}
             style={{marginBottom: "20px"}}
             onClick={handleToggel}
             >{showToggel ? "Show List Students" : "Hide List Students"}
-        </button>
-        <button 
-            className='button'
+        </Button>
+        <Button 
+            className={styles.button}
             style={{marginLeft: "20px"}}
             onClick={()=>setShowModal(true)}
             >
               New Student
-        </button>
+        </Button>
       </div>
       
       <div className={!showToggel ? "show" : "hide"}>
