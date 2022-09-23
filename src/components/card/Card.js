@@ -3,7 +3,7 @@ import './card.css'
 
 const Card = ({id, name, age, adress, phone, type, handleDeleteStudent}) => {
   return (
-    <div className='cardContainer'  style={{backgroundColor:(type === "Girl") ? "pink" : "green"}}>
+    <div className='cardContainer'  style={{backgroundColor:(type === "Girl") ? "pink" : "#aeaeae"}}>
         <div>Name  : {name} </div>
         <div>Age   : {age} </div>
         <div>Adress: {adress} </div>
