@@ -1,0 +1,42 @@
+.formController{
+  padding: 10px;
+}
+
+.formController label {
+  font-weight: bold;
+}
+
+
+.formController input{
+  width: 300px;   
+  margin-left: 25px; 
+  border-radius: 4px;
+  border: 1px solid rgb(22, 0, 100);
+  padding: 10px;  
+}
+
+
+.button{
+  background-color: #151a30;
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  border-radius: 4px;
+  margin-bottom: 5px;
+  width: 140px;
+  cursor: pointer;
+  
+}
+
+.formController select{
+  width: 322px;   
+  margin-left: 25px; 
+  border-radius: 4px;
+  border: 1px solid rgb(22, 0, 100);
+  padding: 10px; 
+}
+

@@ -1,17 +1,18 @@
 import React from 'react'
-import './card.css'
+import styles from './card.module.css'
 
-const Card = ({id, name, age, adress, phone, type, handleDeleteStudent}) => {
+const Card = ({ id, name, age, address, phone, type ,deleteHandler}) => {
   return (
-    <div className='cardContainer'  style={{backgroundColor:(type === "Girl") ? "pink" : "#aeaeae"}}>
-        <div>Name  : {name} </div>
-        <div>Age   : {age} </div>
-        <div>Adress: {adress} </div>
-        <div>Phone : {phone} </div>
-        <div className='deleteBtn'
-        onClick={(e) => handleDeleteStudent(e,id)}
-        >x</div>
-      </div>
+    <div className={styles.cardWrapper} style = {{ backgroundColor : (type === "Girl") ? "pink" : "#ababab" }}>
+             <div>id   : {id}</div>
+             <div>Name   : {name}</div>
+             <div>Age    : {age}</div>
+             <div>Address : {address}</div>
+             <div>Phone  : {phone}</div>
+             <div>Type  : {type}</div>
+             <div className={styles.deleteBtn}
+             onClick={(e) => deleteHandler(e,id)}>x</div>
+        </div>
   )
 }
 
